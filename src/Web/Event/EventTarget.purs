@@ -1,6 +1,5 @@
 module Web.Event.EventTarget
   ( module Exports
-  , read
   , EventListener
   , eventListener
   , addEventListener
@@ -10,23 +9,10 @@ module Web.Event.EventTarget
 
 import Prelude
 
-import Control.Monad.Except (except)
-import Data.Bifunctor (lmap)
-import Data.Either (Either(..))
 import Effect (Effect)
-import Foreign (F, Foreign, ForeignError(..))
 import Web.Event.Event (EventType)
-import Web.Event.Types (Event, EventTarget)
-import Web.Event.Types (EventTarget) as Exports
-
-read :: Foreign -> F EventTarget
-read = except <<< lmap (pure <<< ForeignError) <<< _read Left Right
-
-foreign import _read
-  :: (forall a b. a -> Either a b)
-  -> (forall a b. b -> Either a b)
-  -> Foreign
-  -> Either String EventTarget
+import Web.Event.Internal.Types (Event, EventTarget)
+import Web.Event.Internal.Types (EventTarget) as Exports
 
 -- | A boxed function that can be used as an event listener. This is necessary
 -- | due to the underlying implementation of Effect functions.

@@ -23,8 +23,8 @@ import Data.Newtype (class Newtype)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
 import Web.Event.EventPhase (EventPhase)
-import Web.Event.Types (Event) as Exports
-import Web.Event.Types (Event, EventTarget)
+import Web.Event.Internal.Types (Event) as Exports
+import Web.Event.Internal.Types (Event, EventTarget)
 
 -- | The type of strings used for event types.
 newtype EventType = EventType String

@@ -1,13 +1,4 @@
-/* global EventTarget */
 "use strict";
-
-exports._read = function (left) {
-  return function (right) {
-    return function (foreign) {
-      return foreign instanceof EventTarget ? right(foreign) : left("Value is not an EventTarget");
-    };
-  };
-};
 
 exports.eventListener = function (fn) {
   return function (event) {

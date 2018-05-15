@@ -1,10 +1,10 @@
 {
-  "name": "purescript-web-dom",
-  "homepage": "https://github.com/purescript-web/purescript-web-dom",
+  "name": "purescript-web-events",
+  "homepage": "https://github.com/purescript-web/purescript-web-events",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/purescript-web/purescript-web-dom.git"
+    "url": "git://github.com/purescript-web/purescript-web-events.git"
   },
   "ignore": [
     "**/.*",
@@ -17,7 +17,6 @@
   "dependencies": {
     "purescript-datetime": "#compiler/0.12",
     "purescript-enums": "#compiler/0.12",
-    "purescript-foreign": "#compiler/0.12",
     "purescript-nullable": "#compiler/0.12"
   }
 }

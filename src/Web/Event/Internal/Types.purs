@@ -1,4 +1,4 @@
-module Web.Event.Types where
+module Web.Event.Internal.Types where
 
 -- | Basic type for all DOM events.
 foreign import data Event :: Type
