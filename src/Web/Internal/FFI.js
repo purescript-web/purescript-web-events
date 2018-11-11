@@ -1,16 +1,9 @@
 "use strict";
 
 exports._unsafeReadProtoTagged = function (nothing, just, name, value) {
-  var obj = value;
-  while (obj != null) {
-    var proto = Object.getPrototypeOf(obj);
-    var ctor = proto.constructor.name;
-    if (ctor === name) {
-      return just(value);
-    } else if (ctor === "Object") {
-      return nothing;
-    }
-    obj = proto;
+  var ty = window[name];
+  if (ty != null && value instanceof ty) {
+    return just(value);
   }
   return nothing;
 };
