@@ -13,7 +13,9 @@ exports._currentTarget = function (e) {
 };
 
 exports.defaultPrevented = function (e) {
-  return e.defaultPrevented;
+  return function() {
+    return e.defaultPrevented;
+  };
 };
 
 exports.eventPhaseIndex = function (e) {

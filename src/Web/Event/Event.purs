@@ -74,7 +74,7 @@ foreign import cancelable :: Event -> Boolean
 foreign import preventDefault :: Event -> Effect Unit
 
 -- | Indicates whether `preventDefault` was called on the event.
-foreign import defaultPrevented :: Event -> Boolean
+foreign import defaultPrevented :: Event -> Effect Boolean
 
 -- | The time in milliseconds between 01/01/1970 and when the event was
 -- | dispatched.
