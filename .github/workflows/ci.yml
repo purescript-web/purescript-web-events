@@ -16,14 +16,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install -g bower
           npm install
-          bower install --production
+          spago install
 
       - name: Build source
         run: npm run-script build
 
       - name: Run tests
-        run: |
-          bower install
-          npm run-script test --if-present
+        run: npm run-script test --if-present
