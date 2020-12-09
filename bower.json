@@ -15,8 +15,8 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-datetime": "^4.0.0",
-    "purescript-enums": "^4.0.0",
-    "purescript-nullable": "^4.0.0"
+    "purescript-datetime": "master",
+    "purescript-enums": "master",
+    "purescript-nullable": "main"
   }
 }
