@@ -17,6 +17,6 @@
   "dependencies": {
     "purescript-datetime": "master",
     "purescript-enums": "master",
-    "purescript-nullable": "master"
+    "purescript-nullable": "main"
   }
 }
