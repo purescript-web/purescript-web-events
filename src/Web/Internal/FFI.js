@@ -1,6 +1,12 @@
 "use strict";
 
 exports._unsafeReadProtoTagged = function (nothing, just, name, value) {
+  if (typeof window !== "undefined") {
+    var ty = window[name];
+    if (ty != null && value instanceof ty) {
+      return just(value);
+    }
+  }
   var obj = value;
   while (obj != null) {
     var proto = Object.getPrototypeOf(obj);
