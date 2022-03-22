@@ -1,5 +1,3 @@
-"use strict";
-
 export function eventListener(fn) {
   return function () {
     return function (event) {

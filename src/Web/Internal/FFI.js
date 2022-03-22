@@ -1,5 +1,3 @@
-"use strict";
-
 export function _unsafeReadProtoTagged(nothing, just, name, value) {
   if (typeof window !== "undefined") {
     var ty = window[name];
