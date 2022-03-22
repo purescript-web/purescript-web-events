@@ -1,14 +1,14 @@
 "use strict";
 
-exports.eventListener = function (fn) {
+export function eventListener(fn) {
   return function () {
     return function (event) {
       return fn(event)();
     };
   };
-};
+}
 
-exports.addEventListener = function (type) {
+export function addEventListener(type) {
   return function (listener) {
     return function (useCapture) {
       return function (target) {
@@ -18,9 +18,9 @@ exports.addEventListener = function (type) {
       };
     };
   };
-};
+}
 
-exports.removeEventListener = function (type) {
+export function removeEventListener(type) {
   return function (listener) {
     return function (useCapture) {
       return function (target) {
@@ -30,12 +30,12 @@ exports.removeEventListener = function (type) {
       };
     };
   };
-};
+}
 
-exports.dispatchEvent = function (event) {
+export function dispatchEvent(event) {
   return function (target) {
     return function () {
       return target.dispatchEvent(event);
     };
   };
-};
+}
