@@ -1,6 +1,4 @@
-"use strict";
-
-exports._unsafeReadProtoTagged = function (nothing, just, name, value) {
+export function _unsafeReadProtoTagged(nothing, just, name, value) {
   if (typeof window !== "undefined") {
     var ty = window[name];
     if (ty != null && value instanceof ty) {
@@ -19,4 +17,4 @@ exports._unsafeReadProtoTagged = function (nothing, just, name, value) {
     obj = proto;
   }
   return nothing;
-};
+}

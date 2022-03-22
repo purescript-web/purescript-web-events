@@ -1,53 +1,51 @@
-"use strict";
-
-exports.bubbles = function (e) {
+export function bubbles(e) {
   return e.bubbles;
-};
+}
 
-exports.cancelable = function (e) {
+export function cancelable(e) {
   return e.cancelable;
-};
+}
 
-exports._currentTarget = function (e) {
+export function _currentTarget(e) {
   return e.currentTarget;
-};
+}
 
-exports.defaultPrevented = function (e) {
+export function defaultPrevented(e) {
   return function() {
     return e.defaultPrevented;
   };
-};
+}
 
-exports.eventPhaseIndex = function (e) {
+export function eventPhaseIndex(e) {
   return e.eventPhase;
-};
+}
 
-exports._target = function (e) {
+export function _target(e) {
   return e.target;
-};
+}
 
-exports.timeStamp = function (e) {
+export function timeStamp(e) {
   return e.timeStamp;
-};
+}
 
-exports.type_ = function (e) {
+export function type_(e) {
   return e.type;
-};
+}
 
-exports.preventDefault = function (e) {
+export function preventDefault(e) {
   return function () {
     return e.preventDefault();
   };
-};
+}
 
-exports.stopImmediatePropagation = function (e) {
+export function stopImmediatePropagation(e) {
   return function () {
     return e.stopImmediatePropagation();
   };
-};
+}
 
-exports.stopPropagation = function (e) {
+export function stopPropagation(e) {
   return function () {
     return e.stopPropagation();
   };
-};
+}
