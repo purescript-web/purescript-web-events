@@ -6,24 +6,12 @@ export function eventListener(fn) {
   };
 }
 
-export function addEventListenerOpt(type) {
+export function addEventListener(type) {
   return function (listener) {
     return function (options) {
       return function (target) {
         return function () {
           return target.addEventListener(type, listener, options);
-        };
-      };
-    };
-  };
-}
-
-export function addEventListener(type) {
-  return function (listener) {
-    return function (useCapture) {
-      return function (target) {
-        return function () {
-          return target.addEventListener(type, listener, useCapture);
         };
       };
     };
