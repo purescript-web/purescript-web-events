@@ -1,11 +1,15 @@
 const newSimple = function(ty) {
-  return new CustomEvent(ty);
+  return function () {
+    return new CustomEvent(ty);
+  };
 };
 export { newSimple as new };
 
 export function newOptions (ty) {
   return function (opt) {
-    return new CustomEvent(ty, opt);
+    return function () {
+      return new CustomEvent(ty, opt);
+    };
   };
 }
 
