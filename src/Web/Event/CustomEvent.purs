@@ -3,6 +3,7 @@ module Web.Event.CustomEvent where
 import Data.Maybe (Maybe)
 import Data.Nullable (Nullable, toNullable)
 import Effect (Effect)
+import Foreign (Foreign)
 import Unsafe.Coerce as U
 import Web.Event.Event (Event, EventType)
 import Web.Internal.FFI (unsafeReadProtoTagged)
@@ -42,4 +43,4 @@ newWithOptions
 newWithOptions ty rec@{ bubbles, cancelable, composed } =
   newOptionsImpl ty { detail: toNullable rec.detail, bubbles, cancelable, composed }
 
-foreign import detail :: forall a. CustomEvent -> Nullable a
+foreign import detail :: CustomEvent -> Foreign
