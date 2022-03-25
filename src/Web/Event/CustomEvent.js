@@ -5,7 +5,7 @@ const newSimple = function(ty) {
 };
 export { newSimple as new };
 
-export function newOptions (ty) {
+export function newOptionsImpl (ty) {
   return function (opt) {
     return function () {
       return new CustomEvent(ty, opt);

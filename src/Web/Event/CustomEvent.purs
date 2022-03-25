@@ -1,7 +1,7 @@
 module Web.Event.CustomEvent where
 
 import Data.Maybe (Maybe)
-import Data.Nullable (Nullable)
+import Data.Nullable (Nullable, toNullable)
 import Effect (Effect)
 import Unsafe.Coerce as U
 import Web.Event.Event (Event, EventType)
@@ -22,15 +22,24 @@ foreign import new :: EventType -> Effect CustomEvent
 new'
   :: forall a
    . EventType
-  -> Nullable a
+  -> Maybe a
   -> Effect CustomEvent
-new' ty det = newOptions ty { detail: det, bubbles: false, cancelable: false, composed: false }
+new' ty det =
+  newWithOptions ty { detail: det, bubbles: false, cancelable: false, composed: false }
 
 -- | Create a new `CustomEvent` with all of its constructor's options exposed.
-foreign import newOptions
+foreign import newOptionsImpl
   :: forall a
    . EventType
    -> { detail :: Nullable a , bubbles :: Boolean, cancelable :: Boolean, composed :: Boolean }
    -> Effect CustomEvent
+
+newWithOptions
+  :: forall a
+   . EventType
+   -> { detail :: Maybe a , bubbles :: Boolean, cancelable :: Boolean, composed :: Boolean }
+   -> Effect CustomEvent
+newWithOptions ty rec@{ bubbles, cancelable, composed } =
+  newOptionsImpl ty { detail: toNullable rec.detail, bubbles, cancelable, composed }
 
 foreign import detail :: forall a. CustomEvent -> Nullable a
