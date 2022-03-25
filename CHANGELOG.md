@@ -9,6 +9,7 @@ Breaking changes:
 
 New features:
 - Add FFI for `CustomEvent` constructor (#25 by @JordanMartinez)
+- Add `addEventListenerWithOptions` to expose more options (#25 by @JordanMartinez)
 
 Bugfixes:
 

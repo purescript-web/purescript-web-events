@@ -3,6 +3,7 @@ module Web.Event.EventTarget
   , EventListener
   , eventListener
   , addEventListener
+  , addEventListenerWithOptions
   , removeEventListener
   , dispatchEvent
   ) where
@@ -28,6 +29,21 @@ foreign import eventListener
   :: forall a
    . (Event -> Effect a)
   -> Effect EventListener
+
+-- | Adds a listener to an event target.
+-- | - `capture` - whether the listener is added to the "capture" phase
+-- | - `once` - if true, indicates listener should be invokved at most once
+-- |            before being automatically removed.
+-- | - `passive` - indicates the callback function will never call `preventDefault`
+foreign import addEventListenerWithOptions
+  :: EventType
+  -> EventListener
+  -> { capture :: Boolean
+     , once :: Boolean
+     , passive :: Boolean
+     }
+  -> EventTarget
+  -> Effect Unit
 
 -- | Adds a listener to an event target. The boolean argument indicates whether
 -- | the listener should be added for the "capture" phase.
