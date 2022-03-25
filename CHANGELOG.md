@@ -6,9 +6,9 @@ Notable changes to this project are documented in this file. The format is based
 
 Breaking changes:
 - Migrate FFI to ES modules (#24 by @JordanMartinez)
-- Add `addEventListener` variant with options exposed (#25 by @JordanMartinez)
 
 New features:
+- Add `addEventListenerWithOptions` to expose more options (#25 by @JordanMartinez)
 
 Bugfixes:
 
