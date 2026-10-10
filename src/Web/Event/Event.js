@@ -11,7 +11,7 @@ export function _currentTarget(e) {
 }
 
 export function defaultPrevented(e) {
-  return function() {
+  return function () {
     return e.defaultPrevented;
   };
 }

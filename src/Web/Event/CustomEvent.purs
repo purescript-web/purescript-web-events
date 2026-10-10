@@ -32,14 +32,14 @@ new' ty det =
 foreign import newOptionsImpl
   :: forall a
    . EventType
-   -> { detail :: Nullable a , bubbles :: Boolean, cancelable :: Boolean, composed :: Boolean }
-   -> Effect CustomEvent
+  -> { detail :: Nullable a, bubbles :: Boolean, cancelable :: Boolean, composed :: Boolean }
+  -> Effect CustomEvent
 
 newWithOptions
   :: forall a
    . EventType
-   -> { detail :: Maybe a , bubbles :: Boolean, cancelable :: Boolean, composed :: Boolean }
-   -> Effect CustomEvent
+  -> { detail :: Maybe a, bubbles :: Boolean, cancelable :: Boolean, composed :: Boolean }
+  -> Effect CustomEvent
 newWithOptions ty rec@{ bubbles, cancelable, composed } =
   newOptionsImpl ty { detail: toNullable rec.detail, bubbles, cancelable, composed }
 

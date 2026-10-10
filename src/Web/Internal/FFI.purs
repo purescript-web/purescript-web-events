@@ -10,8 +10,8 @@ unsafeReadProtoTagged name value =
 foreign import _unsafeReadProtoTagged
   :: forall a b
    . Fn4
-      (forall x. Maybe x)
-      (forall x. x -> Maybe x)
-      String
-      a
-      (Maybe b)
+       (forall x. Maybe x)
+       (forall x. x -> Maybe x)
+       String
+       a
+       (Maybe b)

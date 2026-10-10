@@ -1,11 +1,11 @@
-const newSimple = function(ty) {
+const newSimple = function (ty) {
   return function () {
     return new CustomEvent(ty);
   };
 };
 export { newSimple as new };
 
-export function newOptionsImpl (ty) {
+export function newOptionsImpl(ty) {
   return function (opt) {
     return function () {
       return new CustomEvent(ty, opt);
